@@ -14,7 +14,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
-	xsarius-gstreamer1.0-plugin-dvbmediasink \
+	gstreamer1.0-plugin-dvbmediasink \
 	ntfs-3g \
 "
 
@@ -22,7 +22,7 @@ EXTRA_IMAGEDEPENDS += "\
                    splash-bootlogo \
 "
 
-DVBMEDIASINK_CONFIG = "--with-dags --with-pcm --with-eac3 --with-amr --with-wmv --with-vb6 --with-vb8 --with-spark --with-h265"
+DVBMEDIASINK_CONFIG = "--with-pcm --with-eac3 --with-amr --with-wmv --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
 PREFERRED_VERSION_linux-xsarius = "3.14.28"
 

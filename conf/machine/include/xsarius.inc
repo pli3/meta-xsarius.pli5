@@ -29,6 +29,8 @@ EXTRA_IMAGEDEPENDS = " \
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
+DVBMEDIASINK_CONFIG = "--with-dags --with-pcm --with-eac3 --with-amr --with-wmv"
+
 PREFERRED_PROVIDER_virtual/kernel = "linux-xsarius"
 PREFERRED_VERSION_linux-xsarius = "4.2.1"
 
@@ -43,6 +45,7 @@ EXTRA_IMAGECMD_COMPAT = " --eraseblock=0x20000 -n -l --pagesize=0x800 "
 UBI_IMAGEDIR = "${WORKDIR}/deploy-${PN}-image-complete"
 
 IMAGE_CMD_ubi_prepend = " \
+     				  mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/; \
                       cp -f ${IMAGE_ROOTFS}/tmp/vmlinux.gz ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.vmlinux.gz; \
                       cp -f ${DEPLOY_DIR_IMAGE}/${MACHINE}_splash.bmp ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/splash.bmp; \
                       cp -f ${DEPLOY_DIR_IMAGE}/${MACHINE}_splash1.bmp ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/splash1.bmp; \
@@ -50,7 +53,6 @@ IMAGE_CMD_ubi_prepend = " \
 "
 
 IMAGE_CMD_ubi_append = " \
-	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/; \
 	cp -f ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.vmlinux.gz  ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/oe_kernel.bin; \
 	cp -f ${UBI_IMAGEDIR}/${IMAGE_NAME}.rootfs.ubi ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/oe_rootfs.bin; \
 	cd ${DEPLOY_DIR_IMAGE}; \
