@@ -24,8 +24,7 @@ inherit deploy
 ALLOW_EMPTY_${PN} = "1"
 
 do_deploy() {
-            mkdir -p ${DEPLOY_DIR_IMAGE}
-            cp -f ${WORKDIR}/*.bmp ${DEPLOY_DIR_IMAGE}
+	install -m 0644 ${WORKDIR}/*.bmp ${DEPLOYDIR}/
 }
 
-addtask deploy before do_build
+addtask deploy before do_build after do_install
