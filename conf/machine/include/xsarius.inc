@@ -29,7 +29,7 @@ EXTRA_IMAGEDEPENDS = " \
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
-DVBMEDIASINK_CONFIG = "--with-dags --with-pcm --with-eac3 --with-amr --with-wmv"
+DVBMEDIASINK_CONFIG = "--with-dags --with-pcm --with-eac3 --with-amr --with-wmv --with-h265"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xsarius"
 PREFERRED_VERSION_linux-xsarius = "4.2.1"
