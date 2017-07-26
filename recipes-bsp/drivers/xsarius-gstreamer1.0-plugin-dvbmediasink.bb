@@ -9,17 +9,13 @@ DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base libdca ${@bb.utils.contains("B
 
 GSTVERSION = "1.0"
 
-#SRC_URI = "git://git.code.sf.net/p/openpli/gst-plugin-dvbmediasink;protocol=git;branch=gst-1.0"
-SRC_URI = "git://github.com/christophecvr/gstreamer1.0-plugin-multibox-dvbmediasink.git;protocol=git \
-	${@bb.utils.contains("CHIP", "73625", "file://0001.vp8_vp9_codec.patch", "", d)} \
+SRC_URI = "git://github.com/pli3/xsarius-gstreamer1.0-plugin-dvbmediasink.git;protocol=git \
 "
 
 S = "${WORKDIR}/git"
 
 inherit gitpkgv
 
-#PV = "${GSTVERSION}+git${SRCPV}"
-#PKGV = "${GSTVERSION}+git${GITPKGV}"
 SRCREV = "${AUTOREV}"
 PR = "r13"
 
