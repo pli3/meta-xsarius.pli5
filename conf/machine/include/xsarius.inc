@@ -13,7 +13,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
-	gstreamer1.0-plugin-xsarius-dvbmediasink \
+	xsarius-gstreamer1.0-plugin-dvbmediasink \
         gstreamer1.0-libav \
 	splash-bootlogo \
 	enigma2-plugin-extensions-hbbtv-xsarius \
@@ -29,7 +29,7 @@ EXTRA_IMAGEDEPENDS = " \
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
-DVBMEDIASINK_CONFIG = "--with-dags --with-pcm --with-eac3 --with-amr --with-wmv --with-h265"
+DVBMEDIASINK_CONFIG = "--with-xsarius --with-wmv --with-pcm --with-eac3 --with-h265"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xsarius"
 PREFERRED_VERSION_linux-xsarius = "4.2.1"
