@@ -26,13 +26,13 @@ do_install() {
 }
 python populate_packages_prepend () {
     p = ""
-    plugins = bb.data.getVar('ENIGMA2_PLUGIN_EXTENSIONS_HBBTV', d, 1)
+    plugins = d.getVar('ENIGMA2_PLUGIN_EXTENSIONS_HBBTV', True)
 
     if plugins is not None:
         for package in plugins.split():
             p += package.split('_')[0] + " "
 
-    bb.data.setVar('PACKAGES', p, d)
+    d.setVar('PACKAGES', p)
 }
 
 do_deploy() {
