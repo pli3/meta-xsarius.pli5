@@ -26,13 +26,13 @@ do_install() {
 }
 python populate_packages_prepend () {
     p = ""
-    plugins = bb.data.getVar('XSARIUS_OPERA_BROWSER', d, 1)
+    plugins = d.getVar('XSARIUS_OPERA_BROWSER', True)
 
     if plugins is not None:
         for package in plugins.split():
             p += package.split('_')[0] + " "
 
-    bb.data.setVar('PACKAGES', p, d)
+    d.setVar('PACKAGES', p)
 }
 
 do_deploy() {
