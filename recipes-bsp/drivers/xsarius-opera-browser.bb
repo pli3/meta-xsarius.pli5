@@ -36,7 +36,7 @@ python populate_packages_prepend () {
 }
 
 do_deploy() {
-    install -d 0755 ${WORKDIR}/deploy-ipk/mips32el
+    install -d -m 0755 ${WORKDIR}/deploy-ipk/mips32el
 
     for i in ${XSARIUS_OPERA_BROWSER}; do
         if [ -f $i ]; then
