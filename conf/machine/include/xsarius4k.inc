@@ -51,7 +51,7 @@ IMAGE_CMD_tar_prepend = " \
 "
 
 MACHINE_FEATURES += "alsa usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec dvb-c"
-OPENPLI_FEATURES += "ci qtplugins kodi"
+OPENPLI_FEATURES += "ci"
 
 require conf/machine/include/arm/arch-armv7a.inc
 require conf/machine/include/xsarius-wifi.inc
