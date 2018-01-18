@@ -16,6 +16,7 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gstreamer1.0-plugin-dvbmediasink \
 	ntfs-3g \
+	v3d-libgles-bcm7252 \
 "
 
 EXTRA_IMAGEDEPENDS += "\
@@ -27,6 +28,8 @@ DVBMEDIASINK_CONFIG = "--with-pcm --with-eac3 --with-amr --with-wmv --with-h265 
 PREFERRED_VERSION_linux-xsarius = "3.14.28"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xsarius"
+PREFERRED_PROVIDER_virtual/egl = "v3d-libgles-bcm7252"
+PREFERRED_PROVIDER_virtual/libgles2 = "v3d-libgles-bcm7252"
 
 IMAGE_FSTYPES ?= "tar.bz2"
 
@@ -47,7 +50,8 @@ IMAGE_CMD_tar_prepend = " \
         rm -rf update; \
 "
 
-MACHINE_FEATURES += "alsa usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += "alsa usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec dvb-c"
+OPENPLI_FEATURES += "ci"
 
 require conf/machine/include/arm/arch-armv7a.inc
 require conf/machine/include/xsarius-wifi.inc
