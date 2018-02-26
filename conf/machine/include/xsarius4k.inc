@@ -47,7 +47,8 @@ IMAGE_CMD_tar_prepend = " \
         rm -rf update; \
 "
 
-MACHINE_FEATURES += "alsa usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += "alsa dvb-c usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec"
+OPENPLI_FEATURES += "ci"
 
 require conf/machine/include/arm/arch-armv7a.inc
 require conf/machine/include/xsarius-wifi.inc
