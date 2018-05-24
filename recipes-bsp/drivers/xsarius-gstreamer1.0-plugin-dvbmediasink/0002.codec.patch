@@ -1,0 +1,30 @@
+diff --git a/gstdvbaudiosink.c b/gstdvbaudiosink.c
+index 0122294..03591a3 100644
+--- a/gstdvbaudiosink.c
++++ b/gstdvbaudiosink.c
+@@ -64,10 +64,6 @@
+ #include <config.h>
+ #endif
+ 
+-#if defined(__sh__) || defined(SPARK)
+-#include <linux/dvb/stm_ioctls.h>
+-#endif
+-
+ #include <gst/gst.h>
+ #include <gst/audio/audio.h>
+ #include <gst/base/gstbasesink.h>
+diff --git a/gstdvbvideosink.c b/gstdvbvideosink.c
+index 4cdab26..4ea1535 100644
+--- a/gstdvbvideosink.c
++++ b/gstdvbvideosink.c
+@@ -64,10 +64,6 @@
+ #include <config.h>
+ #endif
+ 
+-#if defined(__sh__) || defined(SPARK)
+-#include <linux/dvb/stm_ioctls.h>
+-#endif
+-
+ #include <gst/gst.h>
+ #include <gst/base/gstbasesink.h>
+ 
