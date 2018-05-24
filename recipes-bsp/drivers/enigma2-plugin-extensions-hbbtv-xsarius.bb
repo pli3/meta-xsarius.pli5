@@ -1,6 +1,6 @@
 DESCRIPTION = "enigma2-plugin-extensions-hbbtv"
 LICENSE = "CLOSED"
-PACKAGE_ARCH := "${MACHINE_ARCH}"
+
 SRCREV = "${AUTOREV}"
 PR = "r1"
 
