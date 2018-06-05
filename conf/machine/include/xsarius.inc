@@ -15,9 +15,7 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 MACHINE_EXTRA_RRECOMMENDS = " \
 	xsarius-gstreamer1.0-plugin-dvbmediasink \
 	gstreamer1.0-libav \
-	enigma2-plugin-extensions-hbbtv-xsarius \
 	splash-bootlogo \
-	xsarius-opera-browser \
 	xsarius-opera-dumpait \
 	bcm \
 "
