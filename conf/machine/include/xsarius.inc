@@ -13,7 +13,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
-	xsarius-gstreamer1.0-plugin-dvbmediasink \
 	gstreamer1.0-libav \
 	splash-bootlogo \
 	xsarius-opera-dumpait \
