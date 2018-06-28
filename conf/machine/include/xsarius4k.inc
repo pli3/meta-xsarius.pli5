@@ -14,6 +14,9 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
+	webkit-classic \
+	enigma2-plugin-extensions-hbbtv-webkit \
+	dumpait-legacy \
 	gstreamer1.0-plugin-dvbmediasink \
 	ntfs-3g \
 "
@@ -29,6 +32,8 @@ PREFERRED_VERSION_linux-xsarius = "3.14.28"
 PREFERRED_PROVIDER_virtual/kernel = "linux-xsarius"
 
 IMAGE_FSTYPES ?= "tar.bz2"
+
+PREFERRED_VERSION_directfb = "1.7.7"
 
 IMAGEDIR ?= "${MACHINE}"
 
