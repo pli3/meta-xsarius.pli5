@@ -3,6 +3,8 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 KV = "3.14.28"
 KV_EXTRA = ""
 PV = "${KV}+${SRCDATE}"

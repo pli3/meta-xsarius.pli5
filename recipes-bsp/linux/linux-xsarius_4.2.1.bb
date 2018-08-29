@@ -1,9 +1,9 @@
 SUMMARY = "Linux kernel for ${MACHINE}"
 LICENSE = "GPLv2"
 SECTION = "kernel"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 SRCDATE = "20151022"
-
 KV = "4.2.1"
 
 inherit kernel machine_kernel_pr
