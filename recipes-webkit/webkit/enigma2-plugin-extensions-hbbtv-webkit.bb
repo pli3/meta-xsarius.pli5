@@ -3,7 +3,7 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 #require conf/license/license-close.inc
-
+COMPATIBLE_MACHINE = "^(galaxy|revo)4k$"
 RDEPENDS_${PN} = "dumpait-legacy webkit-classic webkit-classic-browser"
 
 inherit gitpkgv
