@@ -19,7 +19,7 @@ SRC_URI = "http://en3homeftp.net/pub/src/linux-${KV}.tar.xz \
 	file://0001.remove_vtuner_index_check.patch \
         file://bcm_genet_disable_warn.patch \
 	file://rtl8712_fix_build_error.patch \
-        file://kernel-gcc6.patch \	
+        file://kernel-gcc6.patch \
         file://defconfig \
         "
 
