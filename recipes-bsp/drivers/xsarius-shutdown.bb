@@ -29,8 +29,5 @@ pkg_postinst_${PN}_append() {
 	chmod 755 $D/etc/init.d/xsarius-shutdown
 }
 
-pkg_prerm_${PN}() {
-exit 0
-}
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
