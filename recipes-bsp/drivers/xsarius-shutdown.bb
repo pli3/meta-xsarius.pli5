@@ -22,17 +22,14 @@ do_install() {
 }
 
 pkg_preinst_${PN}_prepend() {
-#!/bin/sh
 chmod -x $D/etc/init.d/xsarius-shutdown
 }
 
 pkg_postinst_${PN}_append() {
-#!/bin/sh
 chmod 755 $D/etc/init.d/xsarius-shutdown
 }
 
 pkg_prerm_${PN}() {
-#!/bin/sh
 exit 0
 }
 
