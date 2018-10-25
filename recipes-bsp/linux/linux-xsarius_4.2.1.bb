@@ -15,6 +15,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad
 
 SRC_URI += "http://en3homeftp.net/pub/src/xsarius-linux-${KV}-${SRCDATE}.tar.gz \
     file://defconfig \
+    file://dvbskyt330_si2168_demod.patch \
     "
 
 S = "${WORKDIR}/linux-${KV}"
