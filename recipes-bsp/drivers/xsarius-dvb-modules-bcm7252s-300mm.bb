@@ -9,7 +9,7 @@ KV = "3.14.28"
 KV_EXTRA = ""
 PV = "${KV}+${SRCDATE}"
 
-SRCDATE = "20180831"
+SRCDATE = "20190116"
 
 # @description : model_size is 200mm and 300mm.
 # ex) bcmlinuxdvb_7252S-200mm-3.14.28-20161130.tar.gz.
@@ -39,5 +39,5 @@ do_install() {
 		done
 }
 
-SRC_URI[md5sum] = "1de90de599ba9b39cc6f65a26c05c7dc"
-SRC_URI[sha256sum] = "56b19d71568e1dcbd6cdb569c6a60c4f16e10e04eaf36ca0c4b84663074cf567"
+SRC_URI[md5sum] = "e066e8181db209cc2e3b87fb8944d5ed"
+SRC_URI[sha256sum] = "d6d1036908bb922f70fc7158499ff07463671b033e9b05ac6aeb7bff4dfa5bc2"
