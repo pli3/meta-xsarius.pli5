@@ -16,6 +16,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad
 SRC_URI += "http://en3homeftp.net/pub/src/xsarius-linux-${KV}-${SRCDATE}.tar.gz \
     file://defconfig \
     file://dvbskyt330_si2168_demod.patch \
+    file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
     "
 
 S = "${WORKDIR}/linux-${KV}"
@@ -26,6 +27,8 @@ KERNEL_OUTPUT = "vmlinux"
 KERNEL_OUTPUT_DIR = "."
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_IMAGEDEST = "/tmp"
+
+KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
 FILES_kernel-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz"
 

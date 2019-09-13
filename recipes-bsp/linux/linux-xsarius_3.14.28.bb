@@ -21,6 +21,9 @@ SRC_URI = "http://en3homeftp.net/pub/src/linux-${KV}.tar.xz \
 	file://rtl8712_fix_build_error.patch \
         file://kernel-gcc6.patch \
         file://kernel-gcc7.patch \
+	file://kernel-gcc8.patch \
+	file://0003-mips-kernel-ilog2-gcc7.patch \
+	file://0003-3.x-uaccess-dont-mark-register-as-const.patch \
         file://defconfig \
         "
 
