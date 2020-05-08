@@ -22,6 +22,7 @@ SRC_URI = "http://en3homeftp.net/pub/src/linux-${KV}.tar.xz \
         file://kernel-gcc6.patch \
         file://kernel-gcc7.patch \
 	file://kernel-gcc8.patch \
+	file://kernel-gcc9.patch \
 	file://0003-mips-kernel-ilog2-gcc7.patch \
 	file://0003-3.x-uaccess-dont-mark-register-as-const.patch \
         file://defconfig \
@@ -37,7 +38,7 @@ KERNEL_OUTPUT = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 KERNEL_OBJECT_SUFFIX = "ko"
 KERNEL_IMAGEDEST = "tmp"
 
-FILES_kernel-image = "/${KERNEL_IMAGEDEST}/zImage"
+FILES_${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/zImage"
 
 do_configure_prepend() {
 }

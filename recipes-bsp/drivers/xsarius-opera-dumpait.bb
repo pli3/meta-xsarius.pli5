@@ -10,7 +10,7 @@ PV = "git${SRCPV}"
 PKGV = "git${GITPKGV}"
 PR = "r11"
 
-PACKAGES += " ${PN}-src"
+#PACKAGES += " ${PN}-src"
 
 DEPENDS = "libdvbsi++"
 
