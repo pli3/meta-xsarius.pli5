@@ -49,8 +49,25 @@ IMAGE_CMD_tar_prepend = " \
         rm -rf update; \
 "
 
-MACHINE_FEATURES += "alsa usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += "alsa usbhost wlan kernelwifi extrakernelwifi 3dtv switchoff osdposition hdmicec HDMI"
 
 require conf/machine/include/arm/arch-armv7a.inc
 require conf/machine/include/xsarius-wifi.inc
 require conf/machine/include/xsarius-dvb-usb.inc
+
+MTD_KERNEL = "mmcblk0p1"
+MTD_ROOTFS = "mmcblk0p4"
+
+RCNAME = "revo"
+
+SOC_FAMILY = "bcm7252s"
+
+STB_PLATFORM = "dags7252"
+
+KERNEL_FILE = "oe_kernel.bin"
+ROOTFS_FILE = "rootfs.tar.bz2"
+MTD_BLACK  = "mmcblk0"
+
+BOX_BRAND = "dags"
+
+BLINDSCAN_BINARY = "dags_blindscan"
