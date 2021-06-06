@@ -62,20 +62,8 @@ IMAGE_CMD_ubi_append = " \
 	rm -rf update; \
 "
 
-MACHINE_FEATURES += "dvb-c alsa usbhost wlan kernelwifi 3dtv switchoff osdposition hdmicec dvbusb HDMI"
+MACHINE_FEATURES += "dvb-c alsa usbhost wlan kernelwifi 3dtv switchoff osdposition hdmicec dvbusb"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/xsarius-wifi.inc
 require conf/machine/include/xsarius-dvb-usb.inc
-
-BOX_BRAND = "dags"
-
-BLINDSCAN_BINARY = "dags_blindscan"
-
-MTD_KERNEL = "mtd2"
-MTD_ROOTFS = "mtd0"
-
-KERNEL_FILE = "oe_kernel.bin"
-ROOTFS_FILE = "oe_rootfs.bin"
-
-RCNAME = "fusionhd"
