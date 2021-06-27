@@ -40,7 +40,6 @@ IMAGE_CMD_tar_prepend = " \
         cp ${IMAGE_ROOTFS}/tmp/zImage ${DEPLOY_DIR_IMAGE}/update/${MACHINE}/oe_kernel.bin; \
         cp ${IMAGE_ROOTFS}/boot/initrd_run.bin ${DEPLOY_DIR_IMAGE}/update/${UPDATE_DIR}/initrd_run.bin; \
         rm -rf ${IMAGE_ROOTFS}/tmp/zImage; \
-        rm -rf ${IMAGE_ROOTFS}/boot/initrd_run.bin; \
         tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
         mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/update/${UPDATE_DIR}/rootfs.tar; \
         bzip2 ${DEPLOY_DIR_IMAGE}/update/${MACHINE}/rootfs.tar; \
