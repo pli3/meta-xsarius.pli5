@@ -27,6 +27,7 @@ EXTRA_IMAGEDEPENDS += "\
 DVBMEDIASINK_CONFIG = "--with-pcm --with-eac3 --with-amr --with-wmv --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xsarius"
+PREFERRED_RPROVIDER_aio-grab = "xsarius-grab-${CHIPSET}"
 
 IMAGE_FSTYPES ?= "tar.bz2"
 
