@@ -2,9 +2,10 @@ DESCRIPTION = "E2 Webkit HbbTV Plugin"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
-#require conf/license/license-close.inc
-COMPATIBLE_MACHINE = "^(galaxy|revo)4k$"
-RDEPENDS_${PN} = "dumpait-legacy webkit-classic webkit-classic-browser"
+
+RDEPENDS:${PN} = "dumpait-legacy \
+    ${@bb.utils.contains('TUNE_FEATURES', 'aarch64', 'lib32-webkit-hbbtv-plugin' , 'webkit-hbbtv-plugin', d)} \
+"
 
 inherit gitpkgv
 
@@ -14,9 +15,9 @@ PV = "${PKGVERSION}-${SRCPV}"
 PKGV = "${PKGVERSION}-${GITPKGV}"
 PR = "r0"
 
-INSANE_SKIP_${PN} += "already-stripped"
+INSANE_SKIP_${PN} += "already-stripped arch"
 
-SRC_URI = "git://github.com/pli3/enigma2-plugin-extensions-hbbtv-webkit.git;protocol=https"
+SRC_URI = "git://github.com/oe-alliance/enigma2-plugin-extensions-hbbtv-webkit.git;protocol=https;branch=dev"
 
 S = "${WORKDIR}/git"
 
@@ -26,25 +27,10 @@ do_package_qa() {
 DESTDIR = "enigma2/python/Plugins/Extensions/HbbTV"
 
 do_install_append() {
-    install -d ${D}/usr/bin
-    install -d ${D}/usr/lib/${DESTDIR}
-    install -d ${D}/usr/lib/mozilla/plugins
-    install -d ${D}/home/root
-    install -d ${D}/etc
-    install -d ${D}/etc/pki/tls
+    install -d ${D}${libdir}/${DESTDIR}
     
     # Python Files
-    cp -aRf ${S}/HbbTV/* ${D}/usr/lib/${DESTDIR}
-    python -O -m compileall ${D}/usr/lib/${DESTDIR}
-    rm -rf ${D}/usr/lib/${DESTDIR}/*.py
-    
-    # browser
-    install -m 0755 ${S}/run.sh ${D}/usr/bin
-    install -m 0755 ${S}/dags7252/directfbrc ${D}/etc/
-    install -m 0755 ${S}/dags7252/fb.modes ${D}/etc/
-    install -m 0755 ${S}/cert.pem ${D}/etc/pki/tls/
-    install -m 0755 ${S}/none.html ${D}/home/root
-    install -m 0755 ${S}/libhbbtvplugin.so ${D}/usr/lib/mozilla/plugins/
+    cp -aRf ${S}/HbbTV/* ${D}${libdir}/${DESTDIR}
 }
 
 FILES_${PN} = "/"

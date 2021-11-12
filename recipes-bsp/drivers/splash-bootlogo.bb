@@ -9,7 +9,7 @@ require conf/license/openpli-gplv2.inc
 PV = "1.0"
 PR = "r0"
 
-S = "${WORKDIR}/"
+S = "${WORKDIR}"
 
 SRC_URI = " \
 	${@bb.utils.contains("CHIP", "7252S", "file://${MACHINE}_splash.bmp", " \
