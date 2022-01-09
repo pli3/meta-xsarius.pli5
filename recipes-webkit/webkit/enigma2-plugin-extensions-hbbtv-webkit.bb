@@ -3,10 +3,6 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 
-RDEPENDS:${PN} = "dumpait-legacy \
-    ${@bb.utils.contains('TUNE_FEATURES', 'aarch64', 'lib32-webkit-hbbtv-plugin' , 'webkit-hbbtv-plugin', d)} \
-"
-
 inherit gitpkgv
 
 SRCREV = "${AUTOREV}"
