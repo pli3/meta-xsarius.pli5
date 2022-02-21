@@ -2,6 +2,7 @@ SUMMARY = "dumpait"
 PRIORITY = "required"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
+COMPATIBLE_MACHINE = "^(galaxy|revo)4k$"
 
 inherit autotools-brokensep pkgconfig gitpkgv
 
@@ -12,7 +13,7 @@ PR = "r0"
 
 DEPENDS = "libdvbsi++"
 
-SRC_URI = "git://github.com/oe-alliance/dumpait-legacy.git;protocol=https "
+SRC_URI = "git://github.com/oe-alliance/dumpait-legacy.git;protocol=https;branch=master"
 
 
 S = "${WORKDIR}/git"

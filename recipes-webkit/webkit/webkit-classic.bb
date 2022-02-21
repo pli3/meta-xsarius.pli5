@@ -2,6 +2,7 @@ SUMMARY = "WebKit web rendering engine for the GTK+ platform"
 HOMEPAGE = "http://www.webkitgtk.org/"
 BUGTRACKER = "http://bugs.webkit.org/"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+COMPATIBLE_MACHINE = "^(galaxy|revo)4k$"
 
 LICENSE = "BSD & LGPLv2+"
 LIC_FILES_CHKSUM = "\
@@ -19,12 +20,9 @@ PKGV = "1.1+git${GITPKGV}"
 VER ="1.1"
 PR = "r0"
 
-SRC_URI = "git://github.com/oe-alliance/webkit.org.git;protocol=https \
+SRC_URI = "git://github.com/oe-alliance/webkit.org.git;protocol=https;branch=master \
         file://0001-fix-build-with-bison-3.7.patch \
         file://0002-fix-build-with-gcc11.patch"
-
-SRC_URI = "git://github.com/oe-alliance/webkit.org.git;protocol=https; \
-"
 
 inherit autotools lib_package gtk-doc pkgconfig perlnative python3native gitpkgv
 
@@ -68,7 +66,7 @@ CXXFLAGS += " -std=gnu++98 -Wno-expansion-to-defined -Wno-deprecated-copy -Wno-c
 
 OECMAKE_GENERATOR = "Unix Makefiles"
 
-EXTRA_AUTORECONF = " -I Source/autotools "
+EXTRA_AUTORECONF += " -I Source/autotools "
 
 ARM_INSTRUCTION_SET = "arm"
 
