@@ -2,8 +2,8 @@ DESCRIPTION = "E2 Webkit HbbTV Plugin"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
-#require conf/license/license-close.inc
 COMPATIBLE_MACHINE = "^(galaxy|revo)4k$"
+
 RDEPENDS_${PN} = "dumpait-legacy webkit-classic webkit-classic-browser"
 
 inherit gitpkgv
@@ -16,7 +16,7 @@ PR = "r0"
 
 INSANE_SKIP_${PN} += "already-stripped"
 
-SRC_URI = "git://github.com/pli3/enigma2-plugin-extensions-hbbtv-webkit.git;protocol=https"
+SRC_URI = "git://github.com/oe-alliance/enigma2-plugin-extensions-hbbtv-webkit.git;protocol=https;branch=dev"
 
 S = "${WORKDIR}/git"
 
@@ -35,7 +35,7 @@ do_install_append() {
     
     # Python Files
     cp -aRf ${S}/HbbTV/* ${D}/usr/lib/${DESTDIR}
-    python -O -m compileall ${D}/usr/lib/${DESTDIR}
+    python3 -O -m compileall ${D}/usr/lib/${DESTDIR}
     rm -rf ${D}/usr/lib/${DESTDIR}/*.py
     
     # browser
